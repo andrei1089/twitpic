@@ -1,0 +1,23 @@
+import ecore
+import logging
+
+from terra.core.manager import Manager
+from terra.core.threaded_func import ThreadedFunction
+
+manager = Manager()
+ModalController = manager.get_class("Controller/Settings/Action")
+UsernamePasswordModal = manager.get_class("Widget/Settings/UsernamePasswordModal")
+MixedListController = manager.get_class("Controller/Settings/Folder/MixedList")
+
+log = logging.getLogger("plugins.canola-twitpic.options")
+
+
+class OptionsController(MixedListController):
+    terra_type = "Controller/Settings/Folder/InternetMedia/Twitpic"
+    
+    
+    
+class UserPassController(ModalController):
+    terra_type = "Controller/Settings/Folder/InternetMedia/Twitpic/UserPass"
+
+
