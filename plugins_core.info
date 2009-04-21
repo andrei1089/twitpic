@@ -1,0 +1,528 @@
+[Main Controller]
+modname = main/controller
+enabled = True
+rank = 256
+filter_map = MainController - MainController
+
+[Main Menu UI]
+modname = main_menu/ui
+enabled = True
+rank = 256
+filter_map = Controller/Folder/MainMenu - MainMenuController
+
+[Main Menu Model]
+modname = main_menu/model
+enabled = True
+rank = 256
+filter_map = Model/Folder/MainMenu - MainMenuFolderModel
+
+[Sub Menu UI]
+modname = sub_menu/ui
+enabled = True
+rank = 256
+filter_map = Controller/Folder/SubMenu - SubMenuController
+             Icon - DefaultIcon
+             Icon/Plugin - DefaultPluginIcon
+
+[Multitask Model]
+modname = multitask/model
+enabled = True
+rank = 256
+filter_map = Model/Multitask - MultitaskModel
+
+[Base Task Controller]
+modname = multitask/task/controller
+enabled = True
+rank = 256
+filter_map = TaskController - BaseTaskController
+
+[Base Player Type]
+modname = player/player
+enabled = True
+rank = 256
+filter_map = Player - Player
+             Hook/Player - PlayerHook
+
+[Notify Model]
+modname = notify/model
+enabled = True
+rank = 256
+filter_map = Model/Notify - Notify
+             Model/WaitNotify - WaitNotify
+             Model/YesNoDialog - YesNoDialog
+             Model/EntryDialog - EntryDialog
+
+[Notify UI]
+modname = notify/ui
+enabled = True
+rank = 256
+filter_map = Controller/Notify - NotifyController
+             Controller/WaitNotify - WaitNotifyController
+             Controller/YesNoDialog - YesNoDialogController
+             Controller/EntryDialog - EntryDialogController
+
+[Errors]
+modname = errors/model
+enabled = True
+rank = 256
+filter_map = Model/Notify/Error - CanolaError
+             Model/Notify/Error/Fatal - FatalError
+             Model/Notify/Error/PluginNotFound - PluginNotFoundError
+
+[List UI]
+modname = list/ui
+enabled = True
+rank = 256
+filter_map = Controller/Folder - ListController
+             Widget/ListScreen - ListScreen
+             Widget/ListScreen/OnTheGo - OnTheGoListScreen
+
+[Video List UI]
+modname = video/ui
+enabled = True
+rank = 256
+filter_map = Controller/Folder/Video/Local - VideoListController
+
+[Media Base UI]
+modname = media_base/ui
+enabled = True
+rank = 256
+filter_map = Controller/Media - PlayerController
+
+[Media Base Models]
+modname = media_base/base
+enabled = True
+rank = 256
+filter_map = Model/Media/Audio - AudioModel
+             Model/Media/Video - VideoModel
+             Utils/LazyDBList - LazyDBList
+             Utils/HybridList - HybridList
+
+[File System Model]
+modname = fs.model
+enabled = True
+rank = 256
+filter_map = Model/Folder/Directory - DirectoryModel
+             Model/Media/Audio/FS - AudioDBFileModel
+             Model/Media/Video/FS - VideoDBFileModel
+             Model/Media/Image/FS - ImageDBFileModel
+             Model/Folder/Directory/Media/Audio - AudioDBDirectoryModel
+             Model/Folder/Directory/Media/Video - VideoDBDirectoryModel
+             Model/Folder/Directory/Media/Image - ImageDBDirectoryModel
+
+[File System UI]
+modname = fs.ui
+enabled = True
+rank = 256
+filter_map = Controller/Folder/Directory - DirectoryListController
+
+[Audio Player UI]
+modname = audio/ui
+enabled = True
+rank = 256
+filter_map = Controller/Media/Audio - AudioPlayerController
+             Controller/Folder/Media/Audio/Local - AudioListController
+             Controller/Folder/Directory/Media/Audio - DirectoryAudioListController
+             Controller/Folder/Media/Audio/Local/Playlists - AudioLocalPlaylistController
+             Controller/Folder/Media/Audio/Local/Playlist/OnTheGo - OTGAudioListController
+             Controller/Options/Action/Media/Audio/Local/Playlist/OnTheGo/Save - OTGOptionsSaveController
+             Controller/Options/Action/Media/Audio/Local/Playlist/OnTheGo/Clear - OTGOptionsClearController
+
+[Audio Player Options]
+modname = audio/options
+enabled = True
+rank = 256
+filter_map = Model/Options/Folder/Player/Audio - AudioPlayerOptionsModel
+             Model/Options/Action/Player/Audio/Shuffle - ShuffleOptionModel
+             Model/Options/Action/Player/Audio/Repeat - RepeatOptionModel
+             Model/Options/Folder/Media/Audio/AlbumArt - AlbumArtOptionsModelFolder
+             Model/Options/Folder/Media/Audio/Local/AlbumArt - AlbumGridOptionsModelFolder
+             Model/Options/Folder/Media/Audio/Local/Playlist/OnTheGo - AudioOnTheGoOptionsMF
+             Model/Options/Action/Media/Audio/Local/Playlist/OnTheGo/Save - SaveOnTheGoPlaylistModel
+             Model/Options/Action/Media/Audio/Local/Playlist/OnTheGo/Clear - ClearOnTheGoPlaylistModel
+             Controller/Options/Folder/Player/Audio - AudioPlayerOptionsCheckedController
+
+[Audio Player Task]
+modname = audio/task
+enabled = True
+rank = 256
+filter_map = TaskController/Audio/Local - LocalAudioTaskController
+
+[Album Art UI]
+modname = audio/album_art/ui
+enabled = True
+rank = 256
+filter_map = Controller/Folder/Media/Audio/AlbumArt - AlbumArtAudioController
+
+[Album Grid UI]
+modname = audio/album_grid
+enabled = True
+rank = 256
+filter_map = Controller/Folder/Media/Audio/Local/AlbumArt - AlbumGridController
+
+[Audio Models]
+modname = audio/model
+enabled = True
+rank = 256
+filter_map = Model/Folder/SubMenu - MusicSubMenuModelFolder
+             Model/Folder/Task/Audio/Local - MyMusicSubMenuModelFolder
+             Icon/Folder/Task/Audio/Local - MyMusicIcon
+             Model/Media/Audio/Local - AudioLocalModel
+             Model/Folder/Media/Audio/Local/All - AudioLocalAllModelFolder
+             Model/Folder/Media/Audio/Local/Random - AudioLocalRandomModelFolder
+             Model/Folder/Media/Audio/Local/Favourites - AudioLocalFavouritesModelFolder
+             Model/Folder/Media/Audio/Local/Artist - AudioLocalArtistModelFolder
+             Model/Folder/Media/Audio/Local/Artist/Songs - AudioLocalArtistMediaModelFolder
+             Model/Folder/Media/Audio/Local/Artist/SubMenu - AudioLocalArtistMenuModelFolder
+             Model/Folder/Media/Audio/Local/Album - AudioLocalAlbumModelFolder
+             Model/Folder/Media/Audio/Local/Album/Songs - AudioLocalAlbumMediaModelFolder
+             Model/Folder/Media/Audio/Local/AlbumArt - AlbumArtAudioModelFolder
+             Model/Folder/Media/Audio/Local/Rating - AudioLocalRatingModelFolder
+             Model/Folder/Media/Audio/Local/Playlists - AudioLocalPlaylistModelFolder
+             Hook/OnTheGo/AudioPlaylist - AudioPlaylistOTGHook
+             Model/Folder/Media/Audio/Local/Playlist/Songs - AudioLocalPlaylistMediaModelFolder
+             Model/Folder/Media/Audio/Local/Playlist/OnTheGo - AudioOnTheGoModelFolder
+             Model/Folder/Media/Audio/Local/Genre - AudioLocalGenreModelFolder
+             Model/Folder/Media/Audio/Local/Genre/Songs - AudioLocalGenreMediaModelFolder
+
+[Audio Remote]
+modname = audio/remote
+enabled = True
+rank = 256
+filter_map = Controller/RemotePlayer - RemotePlayer
+             Model/Notify/RemotePlayer - RemotePlayerModel
+             Controller/Notify/RemotePlayer - RemotePlayerController
+
+[Video Player UI]
+modname = video/ui
+enabled = True
+rank = 256
+filter_map = Controller/Media/Video - VideoPlayerController
+
+[Video Models]
+modname = video/model
+enabled = True
+rank = 254
+filter_map = Model/Folder/SubMenu - VideoSubMenuModelFolder
+             Model/Media/Video/Local - VideoLocalModel
+             Model/Folder/Task/Video/Local - VideoLocalList
+             Icon/Folder/Task/Video/Local - VideoLocalIcon
+
+[Video Player Options]
+modname = video/options
+enabled = True
+rank = 256
+filter_map = Model/Options/Folder/Player/Video - VideoPlayerOptionsModel
+             Model/Options/Folder/Video/Local - VideoListOptionsModelFolder
+
+[Photos UI]
+modname = images.controller
+enabled = True
+rank = 256
+filter_map = Controller/Folder/Image - ImageThumbController
+             Controller/Media/Image - ImageFullscreenController
+
+[Photos Options]
+modname = images.options
+enabled = True
+rank = 256
+filter_map = Model/Options/Folder/Image/Fullscreen - ImagesOptionsModel
+             Model/Options/Action/Image/Fullscreen/SlideshowLoop - SlideshowLoopOptionModel
+             Controller/Options/Folder/Image/Fullscreen - ImagesOptionsCheckedController
+
+[Photos Model]
+modname = images.model
+enabled = True
+rank = 255
+filter_map = Model/Folder/SubMenu - PhotosSubMenuFolderModel
+             Model/Folder/Task/Image/Local - ImageLocalList
+             Model/Folder/Image - ImageLocalModelFolder
+             Model/Folder/Image/All - ImageLocalAllModelFolder
+             Icon/Folder/Task/Image/Local - ImageLocalIcon
+
+[Photos Base Models]
+modname = images.model
+enabled = True
+rank = 256
+filter_map = Model/Media/Image - ImageLocalModel
+
+[Photocast UI]
+modname = photocast.ui
+enabled = True
+rank = 256
+filter_map = Controller/Media/Image/Shared - PhotocastFullscreenController
+
+[Photocast Model]
+modname = photocast.model
+enabled = True
+rank = 256
+filter_map = Model/Folder/Task/Image/Photocast - PhotocastModelFolder
+             Icon/Folder/Task/Image/Photocast - PhotocastIcon
+
+[Photocast Settings]
+modname = photocast.settings
+enabled = True
+rank = 256
+filter_map = Model/Settings/Folder/InternetMedia/Photocast - SettingsPhotocastModelFolder
+             Controller/Settings/Folder/InternetMedia/Photocast - SettingsPhotocastFolderController
+
+
+[Podcast UI]
+modname = podcast.ui
+enabled = True
+rank = 256
+filter_map = Controller/Folder/Media/Audio/Podcast - PodcastListController
+             Controller/Folder/Media/Audio/Podcast/CurrentDownloads - CurrentDownloadsListController
+             Controller/Media/Audio/Podcast/Episode - PodcastPlayerController
+
+[Podcast Model]
+modname = podcast.model
+enabled = True
+rank = 256
+filter_map = Model/Folder/Task/Audio/Podcast - PodcastModelFolder
+             Icon/Folder/Task/Audio/Podcast - PodcastIcon
+             Model/Options/Folder/Player/Podcast/Info - InfoOptionModel
+             Model/Options/Action/Player/Podcast/MarkAsUnheard - MarkAsUnheardOptionModel
+
+[Podcast Options]
+modname = podcast.options
+enabled = True
+rank = 256
+filter_map = Controller/Options/Folder/Player/Podcast/Info - InfoOptionController
+             Model/Options/Folder/Media/Audio/Podcast/Feed - PodcastFeedListOptionsModel
+             Model/Options/Folder/Media/Audio/Podcast/General - PodcastGeneralListOptionsModel
+             Model/Options/Action/Media/Audio/Podcast/Feed/Refresh - RefreshFeedOptionModel
+             Model/Options/Action/Media/Audio/Podcast/General/ShowDescription - ShowDescriptionOptionModel
+
+
+[Podcast Settings]
+modname = podcast.settings
+enabled = True
+rank = 256
+filter_map = Model/Settings/Folder/InternetMedia/Podcast - SettingsPodcastModelFolder
+             Controller/Settings/Folder/InternetMedia/Podcast - SettingsPodcastFolderController
+
+
+[IRadio Model]
+modname = iradio.model
+enabled = True
+rank = 256
+filter_map = Model/Folder/Task/Audio/IRadio - IRadioModelFolder
+             Model/Media/Audio/IRadio/Station - IRadioStationModel
+             Icon/Folder/Task/Audio/IRadio - IRadioIcon
+
+[IRadio UI]
+modname = iradio.ui
+enabled = True
+rank = 256
+filter_map = Controller/Media/Audio/IRadio/Station - IRadioStationPlayerController
+             Controller/Folder/Media/Audio/IRadio/Feed/DirectPlay - IRadioFeedPlayerController
+
+[IRadio Settings]
+modname = iradio.settings
+enabled = True
+rank = 256
+filter_map = Model/Settings/Folder/InternetMedia/IRadio - SettingsIRadioModelFolder
+             Controller/Settings/Folder/InternetMedia/IRadio - SettingsIRadioFolderController
+
+
+[Shared SubMenu]
+modname = shared/model
+enabled = True
+rank = 253
+filter_map = Model/Folder/SubMenu - SharedSubMenuModelFolder
+
+
+[Applications SubMenu]
+modname = apps/model
+enabled = True
+rank = 252
+filter_map = Model/Folder/SubMenu - ApplicationsSubMenuModelFolder
+
+
+[Maemo System]
+modname = maemo/system
+enabled = False
+rank = 256
+filter_map = Model/Status/Battery - BatteryStatus
+             Controller/Status/Battery - BatteryStatusController
+             Model/Status/Network - NetworkStatus
+             Controller/Status/Network - NetworkStatusController
+             ScreenPowerSave - ScreenPowerSave
+             SystemProperties - SystemProperties
+
+[Linux System]
+modname = linux/system
+enabled = True
+rank = 255
+filter_map = Model/Status/Battery - BatteryStatus
+             Controller/Status/Battery - BatteryStatusController
+             Model/Status/Network - NetworkStatus
+             Controller/Status/Network - NetworkStatusController
+             SystemProperties - SystemProperties
+
+[Settings UI]
+modname = settings/ui
+enabled = True
+rank = 256
+filter_map = Controller/Folder/Settings - SettingsController
+             Controller/Settings/Folder - ListPanelController
+             Controller/Panel - PanelController
+             Controller/BasicPanel - BasicPanelController
+             Controller/Modal - ModalController
+             Widget/ListPanel - ListPanel
+             Renderer/EtkList/Item - ItemRenderer
+             Renderer/EtkList/FeedItem - FeedItemRenderer
+	     Renderer/EtkList/Slider - SliderRenderer
+             Renderer/EtkList/OnOffItem - OnOffItemRenderer
+             Renderer/EtkList/CheckItem - CheckItemRenderer
+             Renderer/EtkList/MultipleItem - MultipleItemRenderer
+             OptionsController - OptionsController
+             OptionsControllerMixin - OptionsControllerMixin
+             Controller/Options/Folder - OptionsFolderController
+             Controller/Options/CheckedFolder - OptionsCheckedFolderController
+             Controller/Settings/CheckedFolder - CheckListPanelController
+             Controller/Settings/CheckedFolderSingle - CheckListSinglePanelController
+             Controller/Action - ActionController
+             Controller/Settings/Action - SettingsActionController
+             Controller/Options/Action - OptionsActionController
+             Widget/CheckListRenderer - CheckListRenderer
+             Widget/CheckListPanel - CheckListPanel
+
+[Settings - MixedList]
+modname = settings/ui.mixedlist
+enabled = True
+rank = 256
+filter_map = Model/Settings/Folder/MixedList/Item/OnOff - MixedListItemOnOff
+             Model/Settings/Folder/MixedList/Item/Dual - MixedListItemDual
+             Controller/Settings/Folder/MixedList - MixedList
+
+[Settings Model]
+modname = settings/model
+enabled = True
+rank = 256
+filter_map = Model/Folder/Settings - SettingsModel
+             Model/Settings/Folder - ModelSettingsFolder
+             Model/Options/Folder - OptionsModelFolder
+             Model/Action - ActionModel
+             Model/Settings/Action - SettingsActionModel
+             Model/Options/Action - OptionsActionModel
+
+[Theme Settings]
+modname = settings/theme
+enabled = True
+rank = 256
+filter_map = Controller/Settings/Folder/Root/ChooseTheme - SettingsThemeController
+             Model/Settings/Folder/Root/ChooseTheme - ChooseThemeModel
+
+[Internet Media Settings]
+modname = settings/internet_media
+enabled = True
+rank = 256
+filter_map = Model/Settings/Folder/Root/InternetMedia - SettingsInternetMediaModelFolder
+             Controller/Settings/Feed - SettingsEditFeedController
+             Controller/Settings/Folder/Feed - SettingsFeedFolderController
+
+[Media Library Settings]
+modname = settings/media_library
+enabled = True
+rank = 256
+filter_map = Controller/Settings/Dir - SettingsDirController
+             Controller/Settings/MediaFolder - SettingsMediaLibraryController
+             Model/Settings/Dir - ModelSettingsDir
+             Model/Settings/Folder/Root/MediaLibrary - MediaLibraryModel
+             Model/Settings/Folder/MediaLibrary/Folders - MediaFoldersModel
+             Model/Settings/MediaFolder/Audio - MediaLibraryAudioModel
+             Model/Settings/MediaFolder/Video - MediaLibraryVideoModel
+             Model/Settings/MediaFolder/Photo - MediaLibraryPhotoModel
+             Model/Settings/MediaFolder/ForceRescan - MediaLibraryForceRescan
+             Controller/Settings/MediaFolder/ForceRescan - MediaLibraryForceRescanController
+             Model/Settings/Folder/MediaLibrary/CheckCollections - CheckCollectionsModel
+             Model/Settings/Folder/MediaLibrary/CheckCollectionsFinal - CheckCollectionsFinalModel
+             Controller/Settings/Folder/MediaLibrary/CheckCollections - CheckCollectionsController
+             Controller/Settings/Folder/MediaLibrary/CheckCollectionsFinal - CheckCollectionsFinalController
+
+[General Settings]
+modname = settings/general
+enabled = True
+rank = 256
+filter_map = Model/Settings/Folder/Root/General - GeneralSettingsModelFolder
+             Model/Settings/Action/General/DisplayLitWhenCharging - DisplayLitWhenChargingSettingsModel
+             Controller/Settings/Folder/Root/General - GeneralSettingsController
+
+[Widgets - List]
+modname = widgets.list
+enabled = True
+rank = 256
+filter_map = Widget/BaseRowRenderer - BaseRowRendererWidget
+             Widget/RowRenderer - RowRendererWidget
+             Widget/ResizableRowRenderer - ResizableRowRendererWidget
+             Widget/SimpleRowRendererFactory - SimpleRowRendererWidgetFactory
+             Widget/KineticList - KineticListWidget
+             Widget/Scrollbar - ScrollbarWidget
+             Widget/Knob - KnobWidget
+             Widget/ActionButton - ActionButton
+             Widget/DeletableRowRenderer - DeletableRowRendererWidget
+
+[Widgets - Grid]
+modname = widgets.grid
+enabled = True
+rank = 256
+filter_map = Widget/KineticGrid - KineticGridWidget
+             Widget/KineticVGrid - KineticVGridWidget
+
+[Widgets - Modal]
+modname = widgets/modal
+enabled = True
+rank = 256
+filter_map = Widget/Settings/ModalThrobber - ModalThrobber
+             Widget/Settings/EntryModal - EntryModal
+             Widget/Settings/MessageModal - MessageModal
+             Widget/Settings/PanelContentModal - PanelContentModal
+             Widget/Settings/UsernamePasswordModal - UsernamePasswordModal
+             Controller/Folder/Settings/ModalThrobber - ModalThrobberController
+             Controller/Folder/Settings/ModalCheckList - ModalCheckList
+
+[Widgets - Panel]
+modname = widgets/panel
+enabled = True
+rank = 256
+filter_map = Widget/BasicPanel - BasicPanel
+
+[Widgets - Button]
+modname = widgets/button
+enabled = True
+rank = 256
+filter_map = Widget/PanelButton - PanelButtonWidget
+
+[Widgets - Text]
+modname = widgets/text
+enabled = True
+rank = 256
+filter_map = Widget/ScrollableTextBlock - ScrollableTextBlock
+
+[Model Utils]
+modname = utils/model
+enabled = True
+rank = 256
+filter_map = Model/Folder/Ordered - ModelFolderOrdered
+
+[Download Manager]
+modname = download_manager/client
+enabled = True
+rank = 255
+filter_map = DownloadManager - SingletonDownloadManager
+
+[Settings - Download Folder]
+modname = settings/download_folder
+enabled = True
+rank = 256
+filter_map = Model/Settings/Folder/InternetMedia/DownloadFolder - DownloadFolderModelFolder
+             Controller/Settings/Folder/InternetMedia/DownloadFolder - DownloadFolderController
+
+[OnTheGo Hooks]
+modname = onthego/hook
+enabled = True
+rank = 256
+filter_map = Hook/Abstract/OnTheGo - OnTheGoHook
+             OnTheGo/Audio/Hooklist - OnTheGoAudioHooklist
